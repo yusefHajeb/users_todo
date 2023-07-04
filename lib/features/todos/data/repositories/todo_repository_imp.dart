@@ -9,7 +9,7 @@ import 'package:users_todo/features/todos/domain/repositories/todo_repository.da
 import '../../../../core/error/exception.dart';
 import '../datasource/todo_remote_data_source.dart';
 
-typedef Future<Unit> DelelteOrUpdateOrAdd();
+typedef DelelteOrUpdateOrAdd = Future<Unit> Function();
 
 class TodoRepositoryImp implements TodoRepository {
   final TodoRemoteDataSource todoRemoteDataSource;

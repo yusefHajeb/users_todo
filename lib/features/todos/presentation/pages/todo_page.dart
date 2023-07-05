@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_todo/features/todos/presentation/bloc_todos/bloc/todos_bloc.dart';
+import 'package:users_todo/features/todos/presentation/pages/add_todo_page.dart';
 import 'package:users_todo/features/todos/presentation/widget/error_todo_widget.dart';
 // import 'bloc/todos_bloc.dart';
 import '../widget/loaded_widget.dart';
@@ -46,7 +47,12 @@ class TodoPage extends StatelessWidget {
 
   FloatingActionButton _floatingActionButton(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => TodoAddUpdatePage(isUpdateTodo: false)));
+      },
       child: IconButton(
         icon: Icon(Icons.add),
         onPressed: () {},

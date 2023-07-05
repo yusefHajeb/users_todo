@@ -28,3 +28,12 @@ class ErrorTodoState extends TodosState {
   @override
   List<Object> get props => [message];
 }
+
+class RefreshTodoState extends TodosState {
+  final List<Todo> todos;
+
+  RefreshTodoState({required this.todos});
+
+  @override
+  List<Object> get props => [todos];
+}

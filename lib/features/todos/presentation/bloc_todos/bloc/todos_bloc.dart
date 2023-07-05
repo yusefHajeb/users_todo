@@ -22,9 +22,8 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
     on<TodosEvent>((event, emit) async {
       if (event is GetAllTodoEvent) {
         emit(LoadingTodoState());
-
         final todo = await getAllTodo();
-        _failureOrTodoToState(todo);
+        emit(_failureOrTodoToState(todo));
       } else if (event is RefreshTodoEvent) {
         emit(LoadingTodoState());
         final failureOrPosts = await getAllTodo();

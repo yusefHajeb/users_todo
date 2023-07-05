@@ -22,13 +22,16 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
 
   @override
   Future<List<TodoModel>> getAllTodo() async {
+    print(" ================ $baseUrl/todos/ ");
+
     final response = await client.get(
-      Uri.parse("$baseUrl/todo/ "),
+      Uri.parse("$baseUrl/todos/"),
       headers: {
         "Content-Type": "application/json",
       },
     );
     if (response.statusCode == 200) {
+      print("Stateus Code Is 200 ================ ");
       final List decodedJson = jsonDecode(response.body) as List;
       final List<TodoModel> todoModel = decodedJson
           .map((jsonTodoModel) => TodoModel.fromJson(jsonTodoModel))
@@ -47,7 +50,7 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
       'completed': todo.completed
     };
     final response = await client.post(
-      Uri.parse("$baseUrl/posts/"),
+      Uri.parse("$baseUrl/todos/"),
       body: requestBody,
     );
     if (response.statusCode == 201) {
@@ -59,7 +62,7 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
 
   @override
   Future<Unit> deleteTodo(int todoId) async {
-    final response = await client.delete(Uri.parse("$baseUrl/todo/$todoId"));
+    final response = await client.delete(Uri.parse("$baseUrl/todos/$todoId"));
 
     if (response.statusCode == 200) {
       return Future.value(unit);

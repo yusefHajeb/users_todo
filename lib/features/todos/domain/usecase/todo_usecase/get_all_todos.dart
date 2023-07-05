@@ -10,6 +10,6 @@ class GetAllTodoUsecase {
   GetAllTodoUsecase({required this.rerpository});
 
   Future<Either<Failure, List<Todo>>> call() async {
-    return rerpository.getAllTodos();
+    return await rerpository.getAllTodos();
   }
 }

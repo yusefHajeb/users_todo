@@ -7,7 +7,7 @@ import '../../repositories/todo_repository.dart';
 class UpdateTodoUsecase {
   final TodoRepository repository;
 
-  UpdateTodoUsecase(this.repository);
+  UpdateTodoUsecase({required this.repository});
 
   Future<Either<Failure, Unit>> call(Todo todo) async {
     return repository.updateTodo(todo);

@@ -7,7 +7,7 @@ import '../../entites/todo_entity.dart';
 class AddTodoUsecase {
   final TodoRepository todoRepository;
 
-  AddTodoUsecase(this.todoRepository);
+  AddTodoUsecase({required this.todoRepository});
 
   Future<Either<Failure, Unit>> call(Todo todo) async {
     return await todoRepository.addTodo(todo);

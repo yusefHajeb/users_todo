@@ -7,7 +7,7 @@ import '../../entites/todo_entity.dart';
 class GetAllTodoUsecase {
   final TodoRepository rerpository;
 
-  GetAllTodoUsecase(this.rerpository);
+  GetAllTodoUsecase({required this.rerpository});
 
   Future<Either<Failure, List<Todo>>> call() async {
     return rerpository.getAllTodos();

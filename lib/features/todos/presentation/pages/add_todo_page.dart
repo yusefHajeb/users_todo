@@ -44,7 +44,7 @@ class TodoAddUpdatePage extends StatelessWidget {
                     return LoadingWidget();
                   }
                   return FormWidget(
-                    isUpdate: false,
+                    isUpdate: isUpdateTodo,
                     todo: isUpdateTodo ? todo : null,
                   );
                 },

@@ -42,16 +42,20 @@ class TodoRepositoryImp implements TodoRepository {
   @override
   Future<Either<Failure, Unit>> addTodo(Todo todo) async {
     TodoModel todoModel = TodoModel(
-        userId: todo.userId,
-        id: todo.id,
+        // userId: todo.userId,
+        // id: todo.id,
         title: todo.title,
         completed: todo.completed);
-    return await _getMessage(() => todoRemoteDataSource.addTodo(todoModel));
+    return await _getMessage(() {
+      return todoRemoteDataSource.addTodo(todoModel);
+    });
   }
 
   @override
   Future<Either<Failure, Unit>> deleteTodo(int todoId) async {
-    return await _getMessage(() => todoRemoteDataSource.deleteTodo(todoId));
+    return await _getMessage(() {
+      return todoRemoteDataSource.deleteTodo(todoId);
+    });
   }
 
   @override

@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entites/todo_entity.dart';
+import '../../../domain/entites/todo_entity.dart';
 
 class LoadidTodosWidget extends StatelessWidget {
   List<Todo> todos;

@@ -36,7 +36,6 @@ class _FormWidgetState extends State<FormWidget> {
           children: [
             LabelledFormInput(
               controller: _titleController,
-              isUpdate: widget.isUpdate,
               label: '',
               placeholder: '',
             ),

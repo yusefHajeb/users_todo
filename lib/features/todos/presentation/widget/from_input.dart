@@ -12,17 +12,14 @@ class LabelledFormInput extends StatelessWidget {
   final String? placeholder;
   final String? value;
 
-  final bool isUpdate;
-
   final TextEditingController controller;
-  const LabelledFormInput(
-      {Key? key,
-      required this.placeholder,
-      required this.controller,
-      required this.label,
-      this.value,
-      required this.isUpdate})
-      : super(key: key);
+  const LabelledFormInput({
+    Key? key,
+    required this.placeholder,
+    required this.controller,
+    required this.label,
+    this.value,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +30,12 @@ class LabelledFormInput extends StatelessWidget {
       children: [
         AppSpaces.verticalSpace10,
         Text(
-          isUpdate ? label!.toUpperCase() : "",
+          label!.toUpperCase(),
           textAlign: TextAlign.left,
           style: myTheme.headline2!.copyWith(color: HexColor.fromHex("3C3E49")),
         ),
         TextFormField(
           controller: controller,
-          readOnly: isUpdate,
           style: myTheme.headline2!.copyWith(fontSize: 18, color: Colors.white),
           onTap: () {},
           validator: (val) => val!.isEmpty ? "$label Can/'t be empty" : null,
@@ -53,11 +49,9 @@ class LabelledFormInput extends StatelessWidget {
               hintStyle: myTheme.headline2!
                   .copyWith(color: HexColor.fromHex("3C3E49")),
               filled: false,
-              enabledBorder: isUpdate
-                  ? UnderlineInputBorder(
-                      borderSide: BorderSide(color: HexColor.fromHex("3C3E49")),
-                    )
-                  : null,
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: HexColor.fromHex("3C3E49")),
+              ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: HexColor.fromHex("BEF0B2")),
               ),
@@ -69,17 +63,9 @@ class LabelledFormInput extends StatelessWidget {
   }
 
   Widget _suffixWidget() {
-    return !isUpdate
-        ? InkWell(
-            onTap: () {},
-            child: Icon(FontAwesomeIcons.check),
-          )
-        : InkWell(
-            onTap: () {
-              controller.text = "";
-            },
-            child: Icon(FontAwesomeIcons.solidTimesCircle,
-                size: 20, color: HexColor.fromHex("3C3E49")),
-          );
+    return InkWell(
+      onTap: () {},
+      child: Icon(FontAwesomeIcons.check),
+    );
   }
 }

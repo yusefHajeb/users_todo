@@ -4,14 +4,8 @@ class MessageSnackBar {
   void showMessageSnackBar(String message, BuildContext context, Color color) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(
-          message,
-          style: Theme.of(context)
-              .textTheme
-              .headline3!
-              .copyWith(backgroundColor: color),
-        ),
-        backgroundColor: Colors.redAccent,
+        content: Text(message, style: Theme.of(context).textTheme.headline3),
+        backgroundColor: color,
       ),
     );
   }

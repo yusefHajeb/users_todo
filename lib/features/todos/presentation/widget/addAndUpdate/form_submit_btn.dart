@@ -13,7 +13,7 @@ class SubmitFormBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
         minWidth: 100,
-        onPressed: () => onPressed,
+        onPressed: onPressed,
         color: AppColors.primaryAccentColor,
         child: Row(
           children: [

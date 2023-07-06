@@ -27,14 +27,18 @@ class AddDeleteUpdateTodoBloc
       if (event is AddTodoEvent) {
         emit(LoadingAddUpdateDeleteState());
         final failureOrSuccessMsg = await addTodo(event.todo);
-        _eitherSuccessOrFailure(failureOrSuccessMsg, addSuccessMessage);
+        emit(_eitherSuccessOrFailure(failureOrSuccessMsg, addSuccessMessage));
       } else if (event is UpdateTodoEvent) {
         emit(LoadingAddUpdateDeleteState());
         final failureOrSuccessMsg = await updateTodo(event.todo);
-        _eitherSuccessOrFailure(failureOrSuccessMsg, updateSuccessMessage);
+        emit(
+            _eitherSuccessOrFailure(failureOrSuccessMsg, updateSuccessMessage));
       } else if (event is DeleteTodoEvent) {
+        print("DeleteEvent WorkNow---------------");
+        emit(LoadingAddUpdateDeleteState());
         final failureOrSuccessMsg = await deleteTodo(event.todoId);
-        _eitherSuccessOrFailure(failureOrSuccessMsg, deleteSuccessMessage);
+        emit(
+            _eitherSuccessOrFailure(failureOrSuccessMsg, deleteSuccessMessage));
       }
     });
   }

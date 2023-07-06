@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../domain/entites/todo_entity.dart';
+import '../../pages/delete_edite_todo.dart';
 
 class LoadidTodosWidget extends StatelessWidget {
   List<Todo> todos;
@@ -17,8 +18,8 @@ class LoadidTodosWidget extends StatelessWidget {
           children: [
             ListTile(
                 onTap: () {
-                  // Navigator.of(context).push(MaterialPageRoute(
-                  //     builder: (_) => DetailsTodos(detail: todos[index])));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => TodoDeltailPage(todo: todos[index])));
                 },
                 title: Text(todos[index].title.toString()),
                 leading: CircleAvatar(

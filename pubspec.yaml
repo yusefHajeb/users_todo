@@ -37,6 +37,7 @@ dependencies:
   shared_preferences: ^2.0.17
   google_fonts: ^4.0.4
   font_awesome_flutter: ^10.4.0
+  json_annotation: ^4.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

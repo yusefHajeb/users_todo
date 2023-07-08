@@ -7,9 +7,9 @@ import '../../../../core/error/failure.dart';
 class AddUserUsecase {
   final UsersRepository repository;
 
-  AddUserUsecase(this.repository);
+  AddUserUsecase({required this.repository});
 
   Future<Either<Failure, Unit>> call(Users user) async {
-    return repository.addUsers(user);
+    return await repository.addUsers(user);
   }
 }

@@ -7,7 +7,7 @@ import '../../../../core/error/failure.dart';
 class GetAllUsersUsecase {
   final UsersRepository repository;
 
-  GetAllUsersUsecase(this.repository);
+  GetAllUsersUsecase({required this.repository});
 
   Future<Either<Failure, List<Users>>> call() async {
     return await repository.getAllUsers();

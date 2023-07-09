@@ -6,7 +6,7 @@ import '../../../../core/error/failure.dart';
 class DeleteUserUsecase {
   final UsersRepository repository;
 
-  DeleteUserUsecase(this.repository);
+  DeleteUserUsecase({required this.repository});
   Future<Either<Failure, Unit>> call(int userId) async {
     return repository.deleteUseres(userId);
   }

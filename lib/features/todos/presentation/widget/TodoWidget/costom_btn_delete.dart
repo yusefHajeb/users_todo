@@ -7,7 +7,7 @@ import '../../../../../core/Util/message_snackbar.dart';
 import '../../../../../core/color/app_colors2.dart';
 import '../../pages/todo_page.dart';
 import '../../widget/addAndUpdate/dialoge_loading_widget.dart';
-import '../../widget/loading_widget.dart';
+import '../../../../../core/widget/loading_widget.dart';
 
 class CostomDeleteBtn extends StatelessWidget {
   final int todoId;

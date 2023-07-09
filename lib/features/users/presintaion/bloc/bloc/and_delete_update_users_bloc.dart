@@ -19,7 +19,7 @@ class AddDeleteUpdateUsersBloc
     extends Bloc<AddDeleteUpdateUsersEvent, AddDeleteUpdateUsersState> {
   final AddUserUsecase addUser;
   final DeleteUserUsecase deleteUsecase;
-  final UpdateeUsercase updateUsecase;
+  final UpdateUsercase updateUsecase;
   AddDeleteUpdateUsersBloc(
       {required this.deleteUsecase,
       required this.updateUsecase,

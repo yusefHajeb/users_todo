@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:users_todo/features/todos/presentation/bloc_todos/addDeleteUpdateTodo/costom_btn_delete.dart';
-import 'package:users_todo/features/todos/presentation/bloc_todos/addDeleteUpdateTodo/costom_update_btn.dart';
+import 'package:users_todo/features/todos/presentation/widget/TodoWidget/costom_update_btn.dart';
 import '../../../../core/Util/message_snackbar.dart';
 import '../../../../core/Values/app_space.dart';
 import '../../domain/entites/todo_entity.dart';
-import '../bloc_todos/addDeleteUpdateTodo/costom_checkbox_completed.dart';
+import '../widget/TodoWidget/costom_btn_delete.dart';
+import '../widget/TodoWidget/costom_checkbox_completed.dart';
 
 class TodoDeltailPage extends StatelessWidget {
   final Todo todo;

@@ -4,10 +4,10 @@ import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 
 import '../../../../core/error/failure.dart';
 
-class UpdateeUsercase {
+class UpdateUsercase {
   final UsersRepository repository;
 
-  UpdateeUsercase(this.repository);
+  UpdateUsercase({required this.repository});
 
   Future<Either<Failure, Unit>> call(Users user) async {
     return repository.updateUsers(user);

@@ -18,7 +18,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
         final users = await getAlluser();
         emit(_failuerOrTodoState(users));
-      } else if (event is ReferishUserEvent) {
+      } else if (event is RefereshUserEvent) {
         emit(LoadingUserState());
         final failureOrRefrish = await getAlluser();
         emit(_failuerOrTodoState(failureOrRefrish));

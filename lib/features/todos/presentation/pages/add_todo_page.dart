@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_todo/core/Util/message_snackbar.dart';
 import 'package:users_todo/features/todos/presentation/pages/todo_page.dart';
 import 'package:users_todo/features/todos/presentation/widget/addAndUpdate/form_widget.dart';
-import 'package:users_todo/features/todos/presentation/widget/loading_widget.dart';
+import 'package:users_todo/core/widget/loading_widget.dart';
 import '../../../../core/DarckBackground/dark_background.dart';
 import '../../../../core/color/app_colors2.dart';
 import '../../domain/entites/todo_entity.dart';

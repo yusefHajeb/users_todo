@@ -9,4 +9,4 @@ abstract class UserEvent extends Equatable {
 
 class GetAllUserEvent extends UserEvent {}
 
-class ReferishUserEvent extends UserEvent {}
+class RefereshUserEvent extends UserEvent {}

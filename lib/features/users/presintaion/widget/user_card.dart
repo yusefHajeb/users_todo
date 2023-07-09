@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:users_todo/features/users/domain/entites/user_entity.dart';
+
+import '../../../../core/color/app_colors2.dart';
+
+class UserCurd extends StatelessWidget {
+  final Users user;
+  const UserCurd({Key? key, required this.user}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
+          ),
+          borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: HexColor.fromHex("181A1F")),
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      child: Container(
+                          width: 40 * 0.8,
+                          height: 40 * 0.8,
+                          decoration: BoxDecoration(
+                              color: HexColor.fromHex("FFC5D5"),
+                              shape: BoxShape.circle),
+                          child: Text(user.id.toString())),
+                    ),
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(user.name.toString(),
+                              style: GoogleFonts.lato(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.2)),
+                          SizedBox(height: 4),
+                          Text("",
+                              style: GoogleFonts.lato(
+                                  color: HexColor.fromHex("5A5E6D")))
+                        ])
+                  ]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

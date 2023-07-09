@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_todo/features/todos/presentation/bloc_todos/bloc/todos_bloc.dart';
 import 'package:users_todo/features/todos/presentation/pages/add_todo_page.dart';
-import 'package:users_todo/features/todos/presentation/widget/TodoWidget/error_todo_widget.dart';
-// import 'bloc/todos_bloc.dart';
+import 'package:users_todo/core/widget/error_todo_widget.dart';
 import '../widget/TodoWidget/loaded_widget.dart';
-import '../widget/loading_widget.dart';
+import '../../../../core/widget/loading_widget.dart';
 
 class TodoPage extends StatelessWidget {
   const TodoPage({Key? key}) : super(key: key);
@@ -24,21 +23,23 @@ class TodoPage extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
-    return BlocBuilder<TodosBloc, TodosState>(builder: (context, state) {
-      if (state is LoadingTodoState) {
-        return LoadingWidget();
-      } else if (state is LoadedTodoState) {
-        return RefreshIndicator(
-            onRefresh: () => _onRefresh(context),
-            child: LoadidTodosWidget(todos: state.todos));
-      } else if (state is ErrorTodoState) {
-        return MessageDisplayWidget(
-          message: state.message,
-        );
-      }
+    return BlocBuilder<TodosBloc, TodosState>(
+      builder: (context, state) {
+        if (state is LoadingTodoState) {
+          return LoadingWidget();
+        } else if (state is LoadedTodoState) {
+          return RefreshIndicator(
+              onRefresh: () => _onRefresh(context),
+              child: LoadidTodosWidget(todos: state.todos));
+        } else if (state is ErrorTodoState) {
+          return MessageDisplayWidget(
+            message: state.message,
+          );
+        }
 
-      return LoadingWidget();
-    });
+        return LoadingWidget();
+      },
+    );
   }
 
   Future<void> _onRefresh(BuildContext context) async {

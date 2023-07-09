@@ -1,13 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:users_todo/core/strings/failure.dart';
 import 'package:users_todo/core/strings/message.dart';
 import 'package:users_todo/features/todos/domain/entites/todo_entity.dart';
 import 'package:users_todo/features/todos/domain/usecase/todo_usecase/add_todo_usecase.dart';
 import 'package:users_todo/features/todos/domain/usecase/todo_usecase/delete_todos_usecase.dart';
 import 'package:users_todo/features/todos/domain/usecase/todo_usecase/update_todo_usecase.dart';
 
+import '../../../../../core/Util/failure_to_message.dart';
 import '../../../../../core/error/failure.dart';
 
 part 'add_delete_update_todo_event.dart';
@@ -47,21 +47,8 @@ class AddDeleteUpdateTodoBloc
       Either<Failure, Unit> either, String message) {
     return either.fold(
       (failure) =>
-          ErrorAddUpdateDeleteState(messege: _failureToMessage(failure)),
+          ErrorAddUpdateDeleteState(messege: failureToMessage(failure)),
       (_) => SuccessAddUpdateDeleteState(messege: message),
     );
-  }
-
-  String _failureToMessage(Failure failure) {
-    switch (failure.runtimeType) {
-      case ServerFailure:
-        return serverFailureMessage;
-      case EmptyCasheFailure:
-        return emptyCacheFailureMessage;
-      case OffLineFailure:
-        return offlineFailureMessage;
-      default:
-        return "Unexpected Error, Please try again later.";
-    }
   }
 }

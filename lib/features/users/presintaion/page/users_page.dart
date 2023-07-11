@@ -7,6 +7,8 @@ import 'package:users_todo/core/widget/loading_widget.dart';
 import 'package:users_todo/features/users/presintaion/widget/loded_user_widegt.dart';
 
 import '../../../../core/color/app_colors2.dart';
+import '../../../../core/widget/app_header_widget.dart';
+import '../../../../core/widget/outline_button_with_text.dart';
 import '../bloc/UserBloc/user_bloc.dart';
 
 class UsersPage extends StatelessWidget {
@@ -15,7 +17,7 @@ class UsersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: Stack(children: [
         DarkRadialBackground(
           color: HexColor.fromHex("#181a1f"),
@@ -32,7 +34,7 @@ class UsersPage extends StatelessWidget {
           } else if (state is ErrorUserState) {
             return MessageDisplayWidget(message: state.message);
           }
-          return LoadingWidget();
+          return const LoadingWidget();
         })
       ]),
     );

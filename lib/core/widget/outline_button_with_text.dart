@@ -6,6 +6,7 @@ class OutlinedButtonWithText extends StatelessWidget {
   final String content;
   final double width;
   final VoidCallback? onPressed;
+
   OutlinedButtonWithText(
       {Key? key, required this.content, required this.width, this.onPressed})
       : super(key: key);
@@ -14,7 +15,7 @@ class OutlinedButtonWithText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: this.width,
-        height: 45,
+        height: 40,
         child: ElevatedButton(
             onPressed: onPressed,
             style: ButtonStyle(

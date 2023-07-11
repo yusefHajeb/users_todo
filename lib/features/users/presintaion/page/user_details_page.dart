@@ -15,7 +15,6 @@ class UserDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: _buildBody(context),
     );
   }
@@ -34,8 +33,13 @@ class UserDetailsPage extends StatelessWidget {
                     child: Column(
               children: [
                 HeaderApp(
-                  title: "Details User",
-                ),
+                    title: "Details User",
+                    messagingPage: true,
+                    widget: OutlinedButtonWithText(
+                      content: 'show all',
+                      width: 70,
+                      onPressed: () {},
+                    )),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(user.name!,

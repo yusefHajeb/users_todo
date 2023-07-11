@@ -4,7 +4,7 @@ import 'package:collection/collection.dart';
 import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 
 class GeoModel extends Geo {
-  GeoModel({String? lat, String? lng});
+  GeoModel({String? lat, String? lng}) : super(lat: lat, lng: lng);
 
   factory GeoModel.fromMap(Map<String, dynamic> data) => GeoModel(
         lat: data['lat'] as String?,

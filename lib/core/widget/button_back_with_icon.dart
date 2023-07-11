@@ -18,7 +18,9 @@ class RoundedBorderWithIcon extends StatelessWidget {
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            border: Border.all(width: 3, color: HexColor.fromHex("31333D"))),
-        child: Center(child: Icon(icon, size: 20, color: Colors.white)));
+            border: Border.all(width: 2, color: HexColor.fromHex("87C76F"))),
+        child: InkWell(
+            onTap: () => Navigator.pop(context),
+            child: Center(child: Icon(icon, size: 20, color: Colors.white))));
   }
 }

@@ -4,7 +4,8 @@ import 'package:collection/collection.dart';
 import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 
 class CompanyModel extends Company {
-  CompanyModel({String? name, String? catchPhrase, String? bs});
+  CompanyModel({String? name, String? catchPhrase, String? bs})
+      : super(name: name, catchPhrase: catchPhrase, bs: bs);
 
   factory CompanyModel.fromMap(Map<String, dynamic> data) => CompanyModel(
         name: data['name'] as String?,
@@ -22,7 +23,11 @@ class CompanyModel extends Company {
   ///
   /// Parses the string and returns the resulting Json object as [Company].
   factory CompanyModel.fromJson(Map<String, dynamic> data) {
-    return CompanyModel.fromMap(data);
+    return CompanyModel(
+      name: data['name'] as String?,
+      catchPhrase: data['catchPhrase'] as String?,
+      bs: data['bs'] as String?,
+    );
   }
 
   /// `dart:convert`

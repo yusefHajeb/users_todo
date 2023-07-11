@@ -39,14 +39,19 @@ class UserCurd extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       child: Container(
+                          padding: EdgeInsets.all(7),
                           width: 40 * 0.8,
-                          height: 40 * 0.7,
+                          height: 40 * 0.8,
                           decoration: BoxDecoration(
                               color: HexColor.fromHex("FFC5D5"),
                               shape: BoxShape.circle),
                           child: Text(
                             user.id.toString(),
-                            style: Theme.of(context).textTheme.headline2,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline2!
+                                .copyWith(fontWeight: FontWeight.bold),
                           )),
                     ),
                     Column(

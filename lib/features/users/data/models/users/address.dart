@@ -17,7 +17,13 @@ class AddressModel extends Address {
       String? suite,
       String? city,
       String? zipcode,
-      GeoModel? geo});
+      GeoModel? geo})
+      : super(
+            street: street,
+            city: city,
+            zipcode: zipcode,
+            suite: suite,
+            geo: geo);
 
   factory AddressModel.fromMap(Map<String, dynamic> data) => AddressModel(
         street: data['street'],

@@ -16,7 +16,15 @@ class UsersModel extends Users {
     String? phone,
     String? website,
     CompanyModel? company,
-  });
+  }) : super(
+            id: id,
+            name: name,
+            username: username,
+            email: email,
+            address: address,
+            phone: phone,
+            website: website,
+            company: company);
 
   factory UsersModel.fromMap(Map<String, dynamic> data) => UsersModel(
         id: data['id'],
@@ -47,8 +55,21 @@ class UsersModel extends Users {
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [UsersModel].
-  factory UsersModel.fromJson(Map<String, dynamic> json) {
-    return UsersModel.fromMap(json);
+  factory UsersModel.fromJson(Map<String, dynamic> data) {
+    // return UsersModel.fromMap(json);
+    return UsersModel(
+        id: data['id'],
+        name: data['name'],
+        username: data['username'],
+        email: data['email'],
+        address: data['address'] == null
+            ? null
+            : AddressModel.fromMap(data['address'] as Map<String, dynamic>),
+        phone: data['phone'] as String?,
+        website: data['website'] as String?,
+        company: data['company'] == null
+            ? null
+            : CompanyModel.fromMap(data['company']));
   }
   Map<String, dynamic> toJson() {
     return {

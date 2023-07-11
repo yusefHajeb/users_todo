@@ -19,7 +19,7 @@ import 'package:users_todo/features/users/domain/usecase/add_user_usecase.dart';
 import 'package:users_todo/features/users/domain/usecase/get_all_users_usecase.dart';
 import 'package:users_todo/features/users/domain/usecase/update_user_usecase.dart';
 import 'package:users_todo/features/users/presintaion/bloc/UserBloc/user_bloc.dart';
-
+import 'package:users_todo/features/users/presintaion/bloc/bloc/and_delete_update_users_bloc.dart';
 import 'features/users/data/datasource/user_local_data_source.dart';
 import 'features/users/data/repositories/user_repositoryimp.dart';
 import 'features/users/domain/usecase/delete_user_usecase.dart';
@@ -33,8 +33,8 @@ Future<void> init() async {
       addTodo: sl(), updateTodo: sl(), deleteTodo: sl()));
   //users Bloc
   sl.registerFactory(() => UserBloc(getAlluser: sl()));
-  sl.registerFactory(() => AddDeleteUpdateTodoBloc(
-      addTodo: sl(), updateTodo: sl(), deleteTodo: sl()));
+  sl.registerFactory(() => AddDeleteUpdateUsersBloc(
+      addUser: sl(), updateUsecase: sl(), deleteUsecase: sl()));
   // ===========================================================================
 //Usecase
   sl.registerLazySingleton(() => GetAllTodoUsecase(rerpository: sl()));

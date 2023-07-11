@@ -14,14 +14,14 @@ class LoadedUserWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         return Column(
           children: [
-            // ListTile(
-            //   title: Text("${user[index].name}"),
-            //   leading: CircleAvatar(
-            //     child: Text(user[index].id.toString()),
-            //     backgroundColor: AppColors.primaryBackgroundColor,
-            //   ),
-            //   subtitle: Text(user[index].username.toString()),
-            // )
+            ListTile(
+              title: Text("${user[index].name}"),
+              leading: CircleAvatar(
+                child: Text(user[index].id.toString()),
+                backgroundColor: AppColors.primaryBackgroundColor,
+              ),
+              subtitle: Text(user[index].username.toString()),
+            )
           ],
         );
       },

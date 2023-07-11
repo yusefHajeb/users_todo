@@ -15,11 +15,10 @@ abstract class UserRemoteDataSource {
 
 final baseUrl = "https://jsonplaceholder.typicode.com";
 
-class UserRemoteDataSourceImp extends UserRemoteDataSource {
+class UserRemoteDataSourceImp implements UserRemoteDataSource {
   final http.Client client;
 
   UserRemoteDataSourceImp({required this.client});
-  @override
   @override
   Future<List<UsersModel>> getAllUsers() async {
     final response = await client.get(
@@ -31,9 +30,9 @@ class UserRemoteDataSourceImp extends UserRemoteDataSource {
     if (response.statusCode == 200) {
       print("Stateus Code Is 200 ================ ");
       final List decodedJson = jsonDecode(response.body) as List;
-      final List<UsersModel> todoModel = decodedJson
-          .map((jsonTodoModel) => UsersModel.fromJson(jsonTodoModel))
-          .toList();
+      print(decodedJson);
+      final List<UsersModel> todoModel =
+          decodedJson.map((jsonUser) => UsersModel.fromJson(jsonUser)).toList();
       return todoModel;
     } else {
       throw ServerExpinton();

@@ -18,8 +18,7 @@ class UserLocalDataSourceImp extends UserLocalDataSource {
   @override
   Future<Unit> cacheUser(List<UsersModel> usermodel) {
     List userModelToJson = usermodel
-        .map<Map<String, dynamic>>(
-            (usermodel) => usermodel.toJson() as Map<String, dynamic>)
+        .map<Map<String, dynamic>>((usermodel) => usermodel.toMap())
         .toList();
 
     sharedPreferences.setString("CACHED_USERS", userModelToJson.toString());

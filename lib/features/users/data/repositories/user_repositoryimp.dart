@@ -26,7 +26,7 @@ class UsersRepositoryImp implements UsersRepository {
     if (await networkInfo.isConnected) {
       try {
         final remotdata = await userRemoteDataSource.getAllUsers();
-
+        localDataSource.cacheUser(remotdata);
         return Right(remotdata);
       } on ServerExpinton {
         return left(ServerFailure());

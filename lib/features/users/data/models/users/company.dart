@@ -21,8 +21,8 @@ class CompanyModel extends Company {
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [Company].
-  factory CompanyModel.fromJson(String data) {
-    return CompanyModel.fromMap(json.decode(data) as Map<String, dynamic>);
+  factory CompanyModel.fromJson(Map<String, dynamic> data) {
+    return CompanyModel.fromMap(data);
   }
 
   /// `dart:convert`

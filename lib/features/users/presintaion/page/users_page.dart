@@ -26,8 +26,9 @@ class UsersPage extends StatelessWidget {
             return LoadingWidget();
           } else if (state is LoadedUserState) {
             return RefreshIndicator(
-                child: LoadedUserWidget(user: state.user),
-                onRefresh: () => _onRefresh(context));
+              onRefresh: () => _onRefresh(context),
+              child: LoadedUserWidget(user: state.user),
+            );
           } else if (state is ErrorUserState) {
             return MessageDisplayWidget(message: state.message);
           }
@@ -39,6 +40,6 @@ class UsersPage extends StatelessWidget {
 
   Future<void> _onRefresh(BuildContext context) async {
     BlocProvider.of<UserBloc>(context).add(RefereshUserEvent());
-    // return Future.value(Unit);
+    return Future.value(Unit);
   }
 }

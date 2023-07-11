@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class Todo extends Equatable {
+class Todo extends Equatable{
   final int? userId;
   final int? id;
   final String title;

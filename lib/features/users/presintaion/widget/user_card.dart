@@ -11,15 +11,21 @@ class UserCurd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(0),
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
-          ),
-          borderRadius: BorderRadius.circular(16)),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.pink.withAlpha(0),
+            AppColors.lightMauveBackgroundColor
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        // border: Border.all(width: 1, color: Colors.white),
+      ),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(3),
         child: DecoratedBox(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -29,16 +35,19 @@ class UserCurd extends StatelessWidget {
             child: Center(
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       child: Container(
                           width: 40 * 0.8,
-                          height: 40 * 0.8,
+                          height: 40 * 0.7,
                           decoration: BoxDecoration(
                               color: HexColor.fromHex("FFC5D5"),
                               shape: BoxShape.circle),
-                          child: Text(user.id.toString())),
+                          child: Text(
+                            user.id.toString(),
+                            style: Theme.of(context).textTheme.headline2,
+                          )),
                     ),
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +59,7 @@ class UserCurd extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.2)),
                           SizedBox(height: 4),
-                          Text("",
+                          Text(user.email.toString(),
                               style: GoogleFonts.lato(
                                   color: HexColor.fromHex("5A5E6D")))
                         ])

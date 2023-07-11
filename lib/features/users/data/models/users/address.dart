@@ -20,10 +20,10 @@ class AddressModel extends Address {
       GeoModel? geo});
 
   factory AddressModel.fromMap(Map<String, dynamic> data) => AddressModel(
-        street: data['street'] as String?,
-        suite: data['suite'] as String?,
-        city: data['city'] as String?,
-        zipcode: data['zipcode'] as String?,
+        street: data['street'],
+        suite: data['suite'],
+        city: data['city'],
+        zipcode: data['zipcode'],
         geo: data['geo'] == null
             ? null
             : GeoModel.fromMap(data['geo'] as Map<String, dynamic>),
@@ -40,8 +40,8 @@ class AddressModel extends Address {
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [AddressModel].
-  factory AddressModel.fromJson(String data) {
-    return AddressModel.fromMap(json.decode(data) as Map<String, dynamic>);
+  factory AddressModel.fromJson(Map<String, dynamic> data) {
+    return AddressModel.fromMap(data);
   }
 
   // factory AddressModel.fromJson(Map<String, dynamic> data) {

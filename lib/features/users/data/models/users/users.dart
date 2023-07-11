@@ -20,9 +20,9 @@ class UsersModel extends Users {
 
   factory UsersModel.fromMap(Map<String, dynamic> data) => UsersModel(
         id: data['id'],
-        name: data['name'] as String?,
-        username: data['username'] as String?,
-        email: data['email'] as String?,
+        name: data['name'],
+        username: data['username'],
+        email: data['email'],
         address: data['address'] == null
             ? null
             : AddressModel.fromMap(data['address'] as Map<String, dynamic>),
@@ -50,11 +50,23 @@ class UsersModel extends Users {
   factory UsersModel.fromJson(Map<String, dynamic> json) {
     return UsersModel.fromMap(json);
   }
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'username': username,
+      'email': email,
+      'address': address?.toMap(),
+      'phone': phone,
+      'website': website,
+      'company': company?.toMap(),
+    };
+  }
 
   /// `dart:convert`
   ///
   /// Converts [UsersModel] to a JSON string.
-  String toJson() => json.encode(toMap());
+  // String toJson() => json.encode(toMap());
 
   @override
   bool operator ==(Object other) {

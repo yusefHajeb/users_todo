@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_todo/features/todos/presentation/bloc_todos/addDeleteUpdateTodo/add_delete_update_todo_bloc.dart';
-import 'package:users_todo/features/todos/presentation/widget/addAndUpdate/form_submit_btn.dart';
+import 'package:users_todo/core/widget/form_submit_btn.dart';
 import '../../../domain/entites/todo_entity.dart';
 import '../from_input.dart';
 

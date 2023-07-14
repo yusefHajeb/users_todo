@@ -38,12 +38,15 @@ class UserCurd extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
+                      backgroundColor: HexColor.fromHex("5A5E6D"),
+                      radius: 19,
                       child: Container(
                           padding: EdgeInsets.all(7),
                           width: 40 * 0.8,
                           height: 40 * 0.8,
                           decoration: BoxDecoration(
-                              color: HexColor.fromHex("FFC5D5"),
+                              color: AppColors.lightMauveBackgroundColor
+                                  .withOpacity(1),
                               shape: BoxShape.circle),
                           child: Text(
                             user.id.toString(),

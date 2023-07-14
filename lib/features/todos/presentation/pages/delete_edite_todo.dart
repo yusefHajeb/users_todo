@@ -23,7 +23,14 @@ class TodoDeltailPage extends StatelessWidget {
                   AppSpaces.horizontalSpace20,
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(child: Text(todo.title)),
+                    child: Card(
+                        child: Text(
+                      todo.title,
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline2!
+                          .copyWith(fontWeight: FontWeight.bold, fontSize: 10),
+                    )),
                   ),
                   CostomCheckboxCompleted(
                     completed: todo.completed,

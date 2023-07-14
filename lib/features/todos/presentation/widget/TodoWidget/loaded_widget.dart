@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/widget/todo_list_tail.dart';
 import '../../../domain/entites/todo_entity.dart';
 import '../../pages/delete_edite_todo.dart';
 
@@ -12,30 +13,19 @@ class LoadidTodosWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return Column(
-          children: [
-            ListTile(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => TodoDeltailPage(todo: todos[index])));
-                },
-                title: Text(todos[index].title.toString()),
-                leading: CircleAvatar(
-                  child: Text(todos[index].id.toString()),
-                  backgroundColor: Colors.amber,
-                ),
-                trailing: todos[index].completed.toString() == "true"
-                    ? const Icon(
-                        Icons.done,
-                        color: Color.fromARGB(255, 44, 215, 89),
-                      )
-                    : null)
-          ],
-        );
-      },
-      itemCount: todos.length,
-    );
+    return Padding(
+        padding: EdgeInsets.only(left: 10, right: 10),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return TodoListTial(
+                todo: todos[index],
+              );
+            },
+            itemCount: todos.length,
+          ),
+        ));
   }
 }

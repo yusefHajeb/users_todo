@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/Values/app_space.dart';
@@ -10,7 +11,7 @@ import '../../../../core/color/app_colors2.dart';
 class LabelledFormInput extends StatelessWidget {
   final String? label;
   final String? placeholder;
-  final String? value;
+  final bool? isNumber;
 
   final TextEditingController controller;
   const LabelledFormInput({
@@ -18,7 +19,7 @@ class LabelledFormInput extends StatelessWidget {
     required this.placeholder,
     required this.controller,
     required this.label,
-    this.value,
+    this.isNumber,
   }) : super(key: key);
 
   @override
@@ -36,19 +37,25 @@ class LabelledFormInput extends StatelessWidget {
         ),
         TextFormField(
           controller: controller,
-          style: myTheme.headline2!.copyWith(fontSize: 18, color: Colors.white),
+          style: myTheme.headline2!
+              .copyWith(fontSize: 18, color: AppColors.ballColors[2][1]),
           onTap: () {},
+
+          keyboardType:
+              (isNumber ?? false) ? TextInputType.number : TextInputType.text,
           validator: (val) => val!.isEmpty ? "$label Can/'t be empty" : null,
           //initialValue: initialValue,
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 0,
-                vertical: 20,
+                vertical: 10,
               ),
-              suffixIcon: _suffixWidget(),
-              hintStyle: myTheme.headline2!
-                  .copyWith(color: HexColor.fromHex("3C3E49")),
+              suffixIcon: _suffixWidget(controller),
               filled: false,
+              hintStyle: GoogleFonts.lato(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: HexColor.fromHex("3C3E49")),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: HexColor.fromHex("3C3E49")),
               ),
@@ -62,10 +69,13 @@ class LabelledFormInput extends StatelessWidget {
     );
   }
 
-  Widget _suffixWidget() {
+  Widget _suffixWidget(TextEditingController controller) {
     return InkWell(
-      onTap: () {},
-      child: Icon(FontAwesomeIcons.check),
+      onTap: () {
+        controller.text = "";
+      },
+      child: const Icon(FontAwesomeIcons.solidTimesCircle,
+          color: Colors.white24, size: 20),
     );
   }
 }

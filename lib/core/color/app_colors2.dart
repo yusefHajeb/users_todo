@@ -43,9 +43,9 @@ class AppColors {
       HexColor.fromHex("87C76F"),
     ],
   ];
-
+  static final Color secandryColor = HexColor.fromHex("B0FFE1");
   static final Color primaryBackgroundColor = HexColor.fromHex("262A34");
-  static final Color lightMauveBackgroundColor = HexColor.fromHex("C395FC");
+  static final Color lightMauveBackgroundColor = HexColor.fromHex("#181a1f");
   static final Color primaryAccentColor = HexColor.fromHex("246CFD");
 }
 

@@ -43,7 +43,7 @@ class TodoDeltailPage extends StatelessWidget {
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CostomDeleteBtn(todoId: todo.id!),
+                CostomDeleteTodoBtn(todoId: todo.id!),
                 CostomUpdateTodoBtn(todo: todo),
               ],
             ))

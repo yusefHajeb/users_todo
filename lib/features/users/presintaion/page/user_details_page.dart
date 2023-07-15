@@ -12,7 +12,7 @@ import '../../../../core/widget/loading_widget.dart';
 import '../../../../core/widget/outline_button_with_text.dart';
 import '../../../todos/presentation/bloc_todos/bloc/todos_bloc.dart';
 import '../../domain/entites/user_entity.dart';
-import '../bloc/UserBloc/user_bloc.dart';
+import '../widget/custom_delete.dart';
 
 class UserDetailsPage extends StatelessWidget {
   final Users user;
@@ -60,7 +60,7 @@ class UserDetailsPage extends StatelessWidget {
                   Divider(color: AppColors.lightMauveBackgroundColor),
                   companyWidget(user.company!.toMap(), context),
                   AppSpaces.verticalSpace20,
-                  updateDeleteButton(context),
+                  updateDeleteButton(context, user.id!),
                   BlocBuilder<TodosBloc, TodosState>(
                       builder: (context, todoState) {
                     if (todoState is LoadingTodoState) {
@@ -141,7 +141,7 @@ class UserDetailsPage extends StatelessWidget {
     );
   }
 
-  Widget updateDeleteButton(BuildContext context) {
+  Widget updateDeleteButton(BuildContext context, int id) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -151,10 +151,8 @@ class UserDetailsPage extends StatelessWidget {
               width: 100, content: "Update", onPressed: () {}),
         ),
         Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: OutlinedButtonWithText(
-              width: 100, content: "Delete", onPressed: () {}),
-        ),
+            padding: const EdgeInsets.all(10.0),
+            child: CostomDeleteUserBtn(userId: id))
       ],
     );
   }

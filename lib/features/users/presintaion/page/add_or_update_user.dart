@@ -10,10 +10,10 @@ import '../../../../core/DarckBackground/dark_background.dart';
 import '../../../../core/color/app_colors2.dart';
 import '../../domain/entites/user_entity.dart';
 
-class AddUserPage extends StatelessWidget {
+class AddUpdateUserPage extends StatelessWidget {
   final Users? user;
   final bool isUpate;
-  const AddUserPage({super.key, this.user, required this.isUpate});
+  const AddUpdateUserPage({super.key, this.user, required this.isUpate});
 
   @override
   Widget build(BuildContext context) {

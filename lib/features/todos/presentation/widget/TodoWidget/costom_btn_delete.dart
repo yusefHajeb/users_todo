@@ -2,38 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:users_todo/features/todos/presentation/bloc_todos/addDeleteUpdateTodo/add_delete_update_todo_bloc.dart';
-
 import '../../../../../core/Util/message_snackbar.dart';
-import '../../../../../core/color/app_colors2.dart';
+import '../../../../../core/widget/outline_button_with_text.dart';
 import '../../pages/todo_page.dart';
-import '../../widget/addAndUpdate/dialoge_loading_widget.dart';
+import '../../../../../core/widget/dialoge_loading_widget.dart';
 import '../../../../../core/widget/loading_widget.dart';
 
-class CostomDeleteBtn extends StatelessWidget {
+class CostomDeleteTodoBtn extends StatelessWidget {
   final int todoId;
-  const CostomDeleteBtn({Key? key, required this.todoId}) : super(key: key);
+  const CostomDeleteTodoBtn({Key? key, required this.todoId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-        minWidth: 100,
-        onPressed: () {
-          deleteDialog(context, todoId);
-        },
-        color: Colors.redAccent,
-        child: Row(
-          children: [
-            Icon(FontAwesomeIcons.remove,
-                size: 15, color: AppColors.primaryBackgroundColor),
-            SizedBox(
-              width: 20,
-            ),
-            Text(
-              "Delete",
-              style: TextStyle(color: AppColors.primaryBackgroundColor),
-            )
-          ],
-        ));
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: OutlinedButtonWithText(
+          width: 100,
+          content: "Delete",
+          onPressed: () {
+            deleteDialog(context, todoId);
+          }),
+    );
   }
 
   void deleteDialog(BuildContext context, int todoId) {
@@ -48,7 +37,7 @@ class CostomDeleteBtn extends StatelessWidget {
               );
             }
 
-            return DeleteDialogWidget(todoId: todoId);
+            return DeleteDialogWidget(id: todoId);
           }, listener: (context, state) {
             if (state is SuccessAddUpdateDeleteState) {
               MessageSnackBar().showMessageSnackBar(

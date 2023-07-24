@@ -13,6 +13,7 @@ import '../../../../core/widget/outline_button_with_text.dart';
 import '../../../todos/presentation/bloc_todos/bloc/todos_bloc.dart';
 import '../../domain/entites/user_entity.dart';
 import '../widget/custom_delete.dart';
+import '../widget/custom_update_user.dart';
 
 class UserDetailsPage extends StatelessWidget {
   final Users user;
@@ -147,8 +148,7 @@ class UserDetailsPage extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: OutlinedButtonWithText(
-              width: 100, content: "Update", onPressed: () {}),
+          child: CostomUpdateUserBtn(users: user),
         ),
         Padding(
             padding: const EdgeInsets.all(10.0),

@@ -40,7 +40,6 @@ class LabelledFormInput extends StatelessWidget {
           style: myTheme.headline2!
               .copyWith(fontSize: 18, color: AppColors.ballColors[2][1]),
           onTap: () {},
-
           keyboardType:
               (isNumber ?? false) ? TextInputType.number : TextInputType.text,
           validator: (val) => val!.isEmpty ? "$label Can/'t be empty" : null,

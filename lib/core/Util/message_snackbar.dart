@@ -28,7 +28,7 @@ class MessageSnackBar {
                         Transform.rotate(
                           angle: 195.2,
                           child: Container(
-                              width: 50,
+                              width: 40,
                               height: 50,
                               decoration: BoxDecoration(
                                   color: AppColors.primaryAccentColor,

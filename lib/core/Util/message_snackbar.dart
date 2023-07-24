@@ -11,17 +11,17 @@ class MessageSnackBar {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
           content: Container(
-              height: MediaQuery.of(context).size.height / 10,
+              height: MediaQuery.of(context).size.height / 12,
               child: Container(
                   padding: EdgeInsets.only(left: 0),
                   width: double.infinity,
-                  // height: 120,
+                  height: MediaQuery.of(context).size.height / 12,
                   decoration: BoxDecoration(
                       color: color,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20))),
-                  child: Center(
+                  child: Container(
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -38,7 +38,8 @@ class MessageSnackBar {
                         ),
                         AppSpaces.horizontalSpace20,
                         Text(message,
-                            style: GoogleFonts.lato(color: Colors.white))
+                            style: GoogleFonts.lato(
+                                color: Colors.white, fontSize: 12))
                       ]))))),
 
       //   content: Text(message, style: Theme.of(context).textTheme.headline3),

@@ -42,8 +42,8 @@ Future<void> init() async {
   sl.registerFactory(() => UpdateTodoUsecase(repository: sl()));
   sl.registerFactory(() => DeleteTodoUsecase(repository: sl()));
 //Usecase User
-  sl.registerLazySingleton(() => GetAllUsersUsecase(repository: sl()));
   sl.registerFactory(() => AddUserUsecase(repository: sl()));
+  sl.registerLazySingleton(() => GetAllUsersUsecase(repository: sl()));
   sl.registerFactory(() => UpdateUsercase(repository: sl()));
   sl.registerFactory(() => DeleteUserUsecase(repository: sl()));
 

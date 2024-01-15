@@ -1,16 +1,20 @@
-# users_todo
+# Todo Application with Clean Architecture and BLoC
+Welcome to Users-Todos, a simple CRUD application built with Flutter, Dart, BLoC pattern, and Clean Architecture. This application allows you to manage a list of users and their associated todos.
 
-A new Flutter project.
+#Features
+ '+Display a list of users'
+-'Add a new user'
+Edit an existing user
+Delete a user
+Display a list of todos for each user
+Add a new todo for a user
+Edit an existing todo for a user
 
-## Getting Started
+## Getting Started<p align="center">
+  <a href="https://www.yushi.dev/" target="_blank" rel="noreferrer"><img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sKnPI7x7HCLHrR6A3aAZZQ.png" alt="my banner"></a>
+To get started, follow these steps:
+
+
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

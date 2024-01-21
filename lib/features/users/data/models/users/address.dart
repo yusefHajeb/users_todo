@@ -5,6 +5,7 @@ import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 
 import 'geo.dart';
 
+// ignore: must_be_immutable
 class AddressModel extends Address {
 //  final  String? street;
 //  final String? suite;

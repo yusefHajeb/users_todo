@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:users_todo/features/todos/domain/entites/todo_entity.dart';
-
-import '../../../../../core/color/app_colors2.dart';
 import '../../../../../core/widget/outline_button_with_text.dart';
 import '../../pages/add_todo_page.dart';
 

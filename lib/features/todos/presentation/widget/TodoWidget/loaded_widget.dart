@@ -1,12 +1,10 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/widget/todo_list_tail.dart';
 import '../../../domain/entites/todo_entity.dart';
-import '../../pages/delete_edite_todo.dart';
 
+// ignore: must_be_immutable
 class LoadidTodosWidget extends StatelessWidget {
   List<Todo> todos;
   LoadidTodosWidget({required this.todos});

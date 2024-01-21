@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../Values/app_space.dart';
 import '../color/app_colors2.dart';
-import '../error/failure.dart';
-import '../strings/failure.dart';
 
 class MessageSnackBar {
   void showMessageSnackBar(String message, BuildContext context, Color color) {

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 
+// ignore: must_be_immutable
 class GeoModel extends Geo {
   GeoModel({String? lat, String? lng}) : super(lat: lat, lng: lng);
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:users_todo/features/users/presintaion/page/users_page.dart';
 import '../../../../../core/Util/message_snackbar.dart';
-import '../../../../../core/color/app_colors2.dart';
 import '../../../../core/widget/dialoge_loading_widget.dart';
 import '../../../../../core/widget/loading_widget.dart';
 import '../../../../core/widget/outline_button_with_text.dart';

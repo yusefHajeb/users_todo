@@ -8,8 +8,6 @@ import 'package:users_todo/features/users/presintaion/page/add_or_update_user.da
 import 'package:users_todo/features/users/presintaion/widget/loded_user_widegt.dart';
 
 import '../../../../core/color/app_colors2.dart';
-import '../../../../core/widget/app_header_widget.dart';
-import '../../../../core/widget/outline_button_with_text.dart';
 import '../bloc/UserBloc/user_bloc.dart';
 
 class UsersPage extends StatelessWidget {

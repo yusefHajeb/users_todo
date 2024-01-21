@@ -6,8 +6,6 @@ import 'package:users_todo/features/todos/domain/entites/todo_entity.dart';
 import 'package:users_todo/features/todos/domain/usecase/todo_usecase/get_all_todos.dart';
 
 import '../../../../../core/Util/failure_to_message.dart';
-import '../../../../../core/strings/failure.dart';
-import '../../../domain/entites/todo_entity.dart';
 
 part 'todos_event.dart';
 part 'todos_state.dart';

@@ -1,11 +1,10 @@
-import 'dart:convert';
-
 import 'package:collection/collection.dart';
 
 import '../../../domain/entites/user_entity.dart';
 import 'address.dart';
 import 'company.dart';
 
+// ignore: must_be_immutable
 class UsersModel extends Users {
   UsersModel({
     int? id,

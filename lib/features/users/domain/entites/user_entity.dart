@@ -4,6 +4,7 @@ import '../../data/models/users/address.dart';
 import '../../data/models/users/company.dart';
 import '../../data/models/users/geo.dart';
 
+// ignore: must_be_immutable
 class Users extends Equatable {
   int? id;
   String? name;
@@ -45,6 +46,7 @@ class Address extends Equatable {
   List<Object?> get props => [street, suite, city, zipcode, geo];
 }
 
+// ignore: must_be_immutable
 class Company extends Equatable {
   String? name;
   String? catchPhrase;
@@ -57,6 +59,7 @@ class Company extends Equatable {
   List<Object?> get props => [name, catchPhrase, bs];
 }
 
+// ignore: must_be_immutable
 class Geo extends Equatable {
   String? lat;
   String? lng;

@@ -5,7 +5,6 @@ import 'package:users_todo/core/error/failure.dart';
 import 'package:users_todo/features/users/domain/usecase/get_all_users_usecase.dart';
 import '../../../../../core/strings/failure.dart';
 import '../../../domain/entites/user_entity.dart';
-import 'package:users_todo/features/users/domain/entites/user_entity.dart';
 part 'user_event.dart';
 part 'user_state.dart';
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:users_todo/features/users/presintaion/page/user_details_page.dart';
 import 'package:users_todo/features/users/presintaion/widget/user_card.dart';
 
-import '../../../../core/color/app_colors2.dart';
 import '../../domain/entites/user_entity.dart';
 
 class LoadedUserWidget extends StatelessWidget {

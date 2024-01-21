@@ -31,7 +31,7 @@ class CostomDeleteTodoBtn extends StatelessWidget {
           return BlocConsumer<AddDeleteUpdateTodoBloc,
               AddDeleteUpdateTodoState>(builder: (context, state) {
             if (state is LoadingAddUpdateDeleteState) {
-              return AlertDialog(
+              return const AlertDialog(
                 title: LoadingWidget(),
               );
             }

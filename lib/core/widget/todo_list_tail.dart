@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 import 'package:users_todo/core/Values/app_space.dart';
 
 import '../../features/todos/domain/entites/todo_entity.dart';
@@ -16,13 +17,13 @@ class TodoListTial extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(0),
+        // padding: EdgeInsets.all(0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              AppColors.primaryBackgroundColor.withAlpha(0),
+              AppColors.primaryBackgroundColor.withOpacity(0.4),
               AppColors.lightMauveBackgroundColor
             ],
           ),
@@ -30,13 +31,21 @@ class TodoListTial extends StatelessWidget {
           // border: Border.all(width: 1, color: Colors.white),
         ),
         child: Padding(
-          padding: EdgeInsets.all(3),
+          padding: const EdgeInsets.all(6.0),
           child: DecoratedBox(
             decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      HexColor.fromHex("3C3E49"),
+                      AppColors.primaryBackgroundColor,
+                      AppColors.lightMauveBackgroundColor,
+                    ]),
                 borderRadius: BorderRadius.circular(16),
-                color: HexColor.fromHex("191B1F")),
+                color: AppColors.primaryBackgroundColor),
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10.0),
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -46,38 +55,43 @@ class TodoListTial extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Center(
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          CircleAvatar(
-                            backgroundColor:
-                                AppColors.lightMauveBackgroundColor,
-                            child: Container(
-                                // padding: EdgeInsets.all(5),
-                                width: 40 * 0.8,
-                                height: 40 * 0.8,
-                                decoration: BoxDecoration(
-                                    color: AppColors.lightMauveBackgroundColor,
-                                    shape: BoxShape.circle),
-                                child: Center(
-                                  child: Text(
-                                    todo.id.toString(),
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline2!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 10),
-                                  ),
-                                )),
-                          ),
-                          AppSpaces.horizontalSpace10,
-                          Text(todo.title.toString(),
+                          Row(children: [
+                            CircleAvatar(
+                              backgroundColor:
+                                  AppColors.lightMauveBackgroundColor,
+                              child: Container(
+                                  padding: const EdgeInsets.all(5),
+                                  width: 42,
+                                  height: 42,
+                                  decoration: BoxDecoration(
+                                      color:
+                                          AppColors.lightMauveBackgroundColor,
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                    child: Text(
+                                      todo.id.toString(),
+                                      textAlign: TextAlign.center,
+                                      style: context.textTheme.displayMedium!
+                                          .copyWith(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                    ),
+                                  )),
+                            ),
+                            AppSpaces.horizontalSpace20,
+                            Text(
+                              todo.title.toString(),
                               style: GoogleFonts.lato(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 10.2)),
+                                  fontSize: 14),
+                            ),
+                          ]),
+                          AppSpaces.horizontalSpace20,
                           Center(
                               child: todo.completed.toString() == "true"
                                   ? const Icon(

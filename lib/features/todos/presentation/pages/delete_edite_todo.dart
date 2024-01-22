@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 import 'package:users_todo/features/todos/presentation/widget/TodoWidget/costom_update_btn.dart';
 import '../../../../core/Util/message_snackbar.dart';
 import '../../../../core/Values/app_space.dart';
@@ -26,9 +27,7 @@ class TodoDeltailPage extends StatelessWidget {
                     child: Card(
                         child: Text(
                       todo.title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline2!
+                      style: context.textTheme.displayMedium!
                           .copyWith(fontWeight: FontWeight.bold, fontSize: 10),
                     )),
                   ),

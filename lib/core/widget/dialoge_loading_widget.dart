@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:users_todo/core/Util/message_snackbar.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 import 'package:users_todo/features/todos/presentation/bloc_todos/addDeleteUpdateTodo/add_delete_update_todo_bloc.dart';
 import 'package:users_todo/features/users/presintaion/bloc/bloc/and_delete_update_users_bloc.dart';
 
@@ -15,7 +15,7 @@ class DeleteDialogWidget extends StatelessWidget {
     return AlertDialog(
       title: Text(
         "Are You Sure Delete",
-        style: myTheme(context).bodyText1,
+        style: context.textTheme.bodyLarge,
       ),
       actions: [
         TextButton(

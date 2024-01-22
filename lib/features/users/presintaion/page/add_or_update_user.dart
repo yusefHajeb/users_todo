@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_todo/core/Util/message_snackbar.dart';
+import 'package:users_todo/core/widget/app_bar.dart';
 import 'package:users_todo/core/widget/error_todo_widget.dart';
 import 'package:users_todo/core/widget/loading_widget.dart';
 import 'package:users_todo/features/users/presintaion/bloc/bloc/and_delete_update_users_bloc.dart';
@@ -18,6 +19,7 @@ class AddUpdateUserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(context, '', arrowBack: true),
       body: _buildBody(context),
     );
   }
@@ -30,12 +32,12 @@ class AddUpdateUserPage extends StatelessWidget {
           position: "topLeft",
         ),
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child:
               BlocConsumer<AddDeleteUpdateUsersBloc, AddDeleteUpdateUsersState>(
             builder: ((context, state) {
               if (state is LoadingAddUpdateDeleteUserState) {
-                return LoadingWidget();
+                return const LoadingWidget();
               }
               return FormUserWidget(
                 isUpdate: isUpate,

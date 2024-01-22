@@ -8,6 +8,7 @@ import 'package:users_todo/features/users/presintaion/page/add_or_update_user.da
 import 'package:users_todo/features/users/presintaion/widget/loded_user_widegt.dart';
 
 import '../../../../core/color/app_colors2.dart';
+import '../../../../core/widget/app_bar.dart';
 import '../bloc/UserBloc/user_bloc.dart';
 
 class UsersPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class UsersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
+      appBar: buildAppBar(context, "Users", arrowBack: false),
       body: Stack(children: [
         DarkRadialBackground(
           color: HexColor.fromHex("#181a1f"),

@@ -19,7 +19,7 @@ class LoadedUserWidget extends StatelessWidget {
               InkWell(
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => UserDetailsPage(user: user[index]))),
-                  child: UserCurd(user: user[index]))
+                  child: UserCurd(user: user[index])),
               // ListTile(
               //   title: Text("${user[index].name}"),
               //   leading: CircleAvatar(
@@ -33,7 +33,9 @@ class LoadedUserWidget extends StatelessWidget {
         );
       },
       itemCount: user.length,
-      separatorBuilder: (context, i) => Divider(),
+      separatorBuilder: (context, i) => const SizedBox(
+        height: 8,
+      ),
     );
   }
 }

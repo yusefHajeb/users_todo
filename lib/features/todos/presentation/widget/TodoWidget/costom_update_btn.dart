@@ -10,7 +10,6 @@ class CostomUpdateTodoBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButtonWithText(
-        width: 100,
         content: "Update",
         onPressed: () {
           Navigator.push(

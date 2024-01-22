@@ -1,9 +1,7 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 
 import '../../../../core/Values/app_space.dart';
 import '../../../../core/color/app_colors2.dart';
@@ -24,7 +22,7 @@ class LabelledFormInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final myTheme = Theme.of(context).textTheme;
+    final myTheme = context.textTheme;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,17 +31,18 @@ class LabelledFormInput extends StatelessWidget {
         Text(
           label!.toUpperCase(),
           textAlign: TextAlign.left,
-          style: myTheme.headline2!.copyWith(color: HexColor.fromHex("3C3E49")),
+          style: myTheme.displayMedium!
+              .copyWith(color: HexColor.fromHex("899FFE")),
         ),
         TextFormField(
           controller: controller,
-          style: myTheme.headline2!
+          style: myTheme.displayMedium!
               .copyWith(fontSize: 18, color: AppColors.ballColors[2][1]),
           onTap: () {},
           keyboardType:
               (isNumber ?? false) ? TextInputType.number : TextInputType.text,
           validator: (val) => val!.isEmpty ? "$label Can/'t be empty" : null,
-          //initialValue: initialValue,
+          // initialValue: initialValue,
           decoration: InputDecoration(
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 0,

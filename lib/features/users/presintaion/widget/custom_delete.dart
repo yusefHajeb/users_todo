@@ -14,7 +14,6 @@ class CostomDeleteUserBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButtonWithText(
-        width: 100,
         content: "Delete",
         onPressed: () {
           deleteDialog(context, userId);

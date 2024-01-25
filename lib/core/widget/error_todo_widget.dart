@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 
 import '../Values/app_space.dart';
 import '../color/app_colors2.dart';
@@ -12,7 +13,7 @@ class MessageDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 3,
+      height: context.mediaQuery.size.height / 3,
       child: Container(
         padding: const EdgeInsets.only(left: 20),
         width: double.infinity,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 import 'package:users_todo/features/users/presintaion/page/user_details_page.dart';
 import 'package:users_todo/features/users/presintaion/widget/user_card.dart';
 
@@ -17,17 +18,9 @@ class LoadedUserWidget extends StatelessWidget {
           child: Column(
             children: [
               InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  onTap: () => context.navigator.push(MaterialPageRoute(
                       builder: (_) => UserDetailsPage(user: user[index]))),
                   child: UserCurd(user: user[index])),
-              // ListTile(
-              //   title: Text("${user[index].name}"),
-              //   leading: CircleAvatar(
-              //     child: Text(user[index].id.toString()),
-              //     backgroundColor: AppColors.primaryBackgroundColor,
-              //   ),
-              //   subtitle: Text(user[index].username.toString()),
-              // )
             ],
           ),
         );

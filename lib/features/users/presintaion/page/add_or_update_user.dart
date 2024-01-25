@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:users_todo/core/Util/extentions.dart';
 import 'package:users_todo/core/Util/message_snackbar.dart';
 import 'package:users_todo/core/widget/app_bar.dart';
 import 'package:users_todo/core/widget/error_todo_widget.dart';
@@ -47,14 +48,14 @@ class AddUpdateUserPage extends StatelessWidget {
             listener: (context, state) {
               if (state is ErrorAddUpdateDeleteUserState) {
                 MessageDisplayWidget(message: state.message);
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (_) => UsersPage()),
+                context.navigator.pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (_) => const UsersPage()),
                     (route) => false);
               } else if (state is MessageAddUpdateDeleteState) {
                 MessageSnackBar().showMessageSnackBar(
                     state.message, context, Colors.greenAccent);
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (_) => UsersPage()),
+                context.navigator.pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (_) => const UsersPage()),
                     (route) => false);
               }
             },

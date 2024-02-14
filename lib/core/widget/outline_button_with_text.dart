@@ -4,17 +4,17 @@ import '../color/app_colors2.dart';
 
 class OutlinedButtonWithText extends StatelessWidget {
   final String content;
-  final double width;
+
   final VoidCallback? onPressed;
 
-  OutlinedButtonWithText(
-      {Key? key, required this.content, required this.width, this.onPressed})
+  const OutlinedButtonWithText(
+      {Key? key, required this.content, this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: this.width,
+    return SizedBox(
+        // width: width,
         height: 40,
         child: ElevatedButton(
             onPressed: onPressed,

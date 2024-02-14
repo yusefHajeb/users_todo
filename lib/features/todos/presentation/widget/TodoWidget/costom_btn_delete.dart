@@ -16,7 +16,6 @@ class CostomDeleteTodoBtn extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: OutlinedButtonWithText(
-          width: 100,
           content: "Delete",
           onPressed: () {
             deleteDialog(context, todoId);

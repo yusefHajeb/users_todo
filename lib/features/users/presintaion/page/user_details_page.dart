@@ -34,54 +34,60 @@ class UserDetailsPage extends StatelessWidget {
         ),
         SingleChildScrollView(
           child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
-              child: SafeArea(
-                  child: SingleChildScrollView(
-                      child: Column(
-                children: [
-                  HeaderApp(
-                    title: "Details User",
-                    messagingPage: true,
-                    widget: SizedBox(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(user.name!,
-                        style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  atributeUser(user.email.toString(), FontAwesomeIcons.message),
-                  AppSpaces.verticalSpace10,
-                  atributeUser(user.phone.toString(), FontAwesomeIcons.phone),
-                  AppSpaces.verticalSpace10,
-                  atributeUser(user.website.toString(), FontAwesomeIcons.link),
-                  Divider(color: AppColors.lightMauveBackgroundColor),
-                  companyWidget(user.company!.toMap(), context),
-                  AppSpaces.verticalSpace20,
-                  updateDeleteButton(context, user.id!),
-                  BlocBuilder<TodosBloc, TodosState>(
-                      builder: (context, todoState) {
-                    if (todoState is LoadingTodoState) {
-                      return LoadingWidget();
-                    } else if (todoState is LoadedTodoState) {
-                      final todos = todoState.todos
-                          .where((element) => element.userId == user.id)
-                          .toList();
-                      return ListView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: todos.length,
-                          itemBuilder: (context, index) {
-                            final todo = todos[index];
-                            return TodoListTial(todo: todo);
-                          });
-                    }
-                    return const LoadingWidget();
-                  }),
-                ],
-              )))),
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    AppSpaces.verticalSpace10,
+                    const HeaderApp(
+                      title: "Details User",
+                      messagingPage: true,
+                      widget: SizedBox(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(user.name!,
+                          style: GoogleFonts.lato(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    atributeUser(
+                        user.email.toString(), FontAwesomeIcons.message),
+                    AppSpaces.verticalSpace5,
+                    atributeUser(user.phone.toString(), FontAwesomeIcons.phone),
+                    AppSpaces.verticalSpace5,
+                    atributeUser(
+                        user.website.toString(), FontAwesomeIcons.link),
+                    Divider(color: AppColors.lightMauveBackgroundColor),
+                    companyWidget(user.company!.toMap(), context),
+                    AppSpaces.verticalSpace20,
+                    updateDeleteButton(context, user.id!),
+                    BlocBuilder<TodosBloc, TodosState>(
+                        builder: (context, todoState) {
+                      if (todoState is LoadingTodoState) {
+                        return const LoadingWidget();
+                      } else if (todoState is LoadedTodoState) {
+                        final todos = todoState.todos
+                            .where((element) => element.userId == user.id)
+                            .toList();
+                        return ListView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: todos.length,
+                            itemBuilder: (context, index) {
+                              final todo = todos[index];
+                              return TodoListTial(todo: todo);
+                            });
+                      }
+                      return const LoadingWidget();
+                    }),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ],
     );

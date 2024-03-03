@@ -2,14 +2,36 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "chrome",
+    
+    
+        "version": "0.2.0",
+        "configurations": [
+          {
+            "name": "ToDo Development",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+            "type": "dart",
+            "program": "lib/main_development.dart",
+            "args": ["--flavor", "Development", "--target", "lib/main_development.dart" ]
+          },
+          {
+            "name": "ToDo Users Production",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_production.dart",
+            "args": ["--flavor", "Production", "--target", "lib/main_production.dart" ]
+          }
+        ],
+        "compounds": []
+      
+    
+    // "version": "0.2.0",
+    // "configurations": [
+    //     {
+    //         "type": "chrome",
+    //         "request": "launch",
+    //         "name": "Launch Chrome against localhost",
+    //         "url": "http://localhost:8080",
+    //         "webRoot": "${workspaceFolder}"
+    //     }
+    // ]
 }

@@ -103,7 +103,7 @@ class UserDetailsPage extends StatelessWidget {
             Text(
               "Company",
               textAlign: TextAlign.center,
-              style: myTheme(ctx).headline1!.copyWith(fontSize: 14),
+              style: myTheme(ctx).displayLarge!.copyWith(fontSize: 14),
             ),
             AppSpaces.horizontalSpace10,
             Column(
